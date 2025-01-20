@@ -11,7 +11,7 @@ export async function POST(req) {
   // Create new Svix instance with secret
   const wh = new Webhook(SIGNING_SECRET)
 
-  // Get headers 
+  // Get headers
   const headerPayload = await headers()
   const svix_id = headerPayload.get('svix-id')
   const svix_timestamp = headerPayload.get('svix-timestamp')
@@ -55,7 +55,7 @@ export async function POST(req) {
     console.log('User created')
   }
 
-  if(eventType === 'user.updated'){
+  if(eventType == 'user.updated'){
     console.log('User updated')
   }
 
